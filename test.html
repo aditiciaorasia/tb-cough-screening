@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Cough Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,16 +12,20 @@
         <h1>Cough Test</h1>
 
         <p class="subtitle">
-            Please record or upload a cough sound (5–10 seconds) in a quiet environment.
+            Please upload a cough audio recording (5–10 seconds) in a quiet environment.
+        </p>
+
+        <p class="note">
+            Accepted formats: .wav or .mp3
         </p>
 
         <input type="file" accept=".wav,.mp3">
 
         <br><br>
 
-        <a href="result.html" class="btn">
+        <button class="btn" onclick="sendAudio()">
             Submit for Analysis
-        </a>
+        </button>
 
         <br><br>
 
@@ -29,5 +34,9 @@
         </a>
     </div>
 
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
 </body>
 </html>
+

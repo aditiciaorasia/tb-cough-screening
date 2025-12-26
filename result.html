@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Result</title>
+    <title>Screening Result</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -10,22 +11,39 @@
     <div class="container">
         <h1>Screening Result</h1>
 
-        <p class="result low">
-            Low Risk
-        </p>
+        <p id="risk" class="result"></p>
 
-        <p class="subtitle">
-            Based on the cough sound analysis, the result indicates a lower risk.
-        </p>
+        <p id="message" class="subtitle"></p>
 
         <p class="note">
+            This result is for preliminary screening only and does not constitute a medical diagnosis.
             Please consult a healthcare professional for confirmation.
         </p>
 
         <a href="test.html" class="btn">
             Test Again
         </a>
+
+        <br><br>
+
+        <a href="index.html" class="link">
+            Back to Home
+        </a>
     </div>
+
+    <!-- Read result from browser storage -->
+    <script>
+        const data = JSON.parse(localStorage.getItem("tb_result"));
+
+        if (data) {
+            document.getElementById("risk").innerText = data.risk + " Risk";
+            document.getElementById("message").innerText = data.message;
+        } else {
+            document.getElementById("risk").innerText = "No Result Available";
+            document.getElementById("message").innerText =
+                "Please perform the cough test to view the screening result.";
+        }
+    </script>
 
 </body>
 </html>
