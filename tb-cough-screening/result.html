@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Screening Result</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="test-box">
+
+    <a href="test.html" class="back-link">← Back to Test</a>
+
+    <h1>Screening Result</h1>
+
+    <div id="riskBadge" class="result-badge low">
+        Low Risk
+    </div>
+
+    <p id="message">
+        Based on the cough analysis, the result indicates a lower risk.
+    </p>
+
+    <p class="footer-note">
+        Please consult a healthcare professional for confirmation.
+    </p>
+
+    <a href="test.html" class="primary-btn">Test Again</a>
+</div>
+
+<script>
+    const data = JSON.parse(localStorage.getItem("tb_result"));
+    if (data) {
+        document.getElementById("riskBadge").innerText = data.risk + " Risk";
+        document.getElementById("message").innerText = data.message;
+    }
+</script>
+
+</body>
+</html>
