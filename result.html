@@ -8,42 +8,34 @@
 </head>
 <body>
 
-    <div class="container">
-        <h1>Screening Result</h1>
+    <div class="test-box">
 
-        <p id="risk" class="result"></p>
+    <a href="test.html" class="back-link">← Back to Test</a>
 
-        <p id="message" class="subtitle"></p>
+    <h1>Screening Result</h1>
 
-        <p class="note">
-            This result is for preliminary screening only and does not constitute a medical diagnosis.
-            Please consult a healthcare professional for confirmation.
-        </p>
-
-        <a href="test.html" class="btn">
-            Test Again
-        </a>
-
-        <br><br>
-
-        <a href="index.html" class="link">
-            Back to Home
-        </a>
+    <div id="riskBadge" class="result-badge low">
+        Low Risk
     </div>
 
-    <!-- Read result from browser storage -->
-    <script>
-        const data = JSON.parse(localStorage.getItem("tb_result"));
+    <p id="message">
+        Based on the cough analysis, the result indicates a lower risk.
+    </p>
 
-        if (data) {
-            document.getElementById("risk").innerText = data.risk + " Risk";
-            document.getElementById("message").innerText = data.message;
-        } else {
-            document.getElementById("risk").innerText = "No Result Available";
-            document.getElementById("message").innerText =
-                "Please perform the cough test to view the screening result.";
-        }
-    </script>
+    <p class="footer-note">
+        Please consult a healthcare professional for confirmation.
+    </p>
+
+    <a href="test.html" class="primary-btn">Test Again</a>
+</div>
+
+<script>
+    const data = JSON.parse(localStorage.getItem("tb_result"));
+    if (data) {
+        document.getElementById("riskBadge").innerText = data.risk + " Risk";
+        document.getElementById("message").innerText = data.message;
+    }
+</script>
 
 </body>
 </html>

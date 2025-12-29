@@ -1,54 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f7f8;
     margin: 0;
-    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f9fbfd;
+    color: #1b262c;
 }
 
-.container {
-    max-width: 500px;
-    margin: 80px auto;
-    background: white;
-    padding: 30px;
-    text-align: center;
-    border-radius: 8px;
+/* Layout */
+.page {
+    margin-top: -60px;
+    padding-top: 100px;
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px 20px;
+    background-color: rgb(241, 241, 241);
 }
 
-h1 {
-    color: #1f6f8b;
+
+/* Header */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    background-color: #CFAB8D;
+    box-shadow: 0 20px 32px rgba(0, 0, 0, 0.10);
+
 }
 
-.subtitle {
-    color: #555;
+/* Centered content inside header */
+.header-inner {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+    
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+    margin-top: -140px;
+    margin-left: 20px;
+}
+
+
+.nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    color: #ffffff;
+    transition: transform 0.2s ease, color 0.2s ease;
+
+}
+
+.nav a:hover {
+    transform: scale(5.5);
+    color: #000000;
+}
+
+/* Hero */
+.hero {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin-top: 110px;
     margin-bottom: 20px;
+    margin-left: -580px;
+    margin-right: 500px;
 }
 
-.btn {
+.hero p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #4a5c6a;
+    margin-bottom: 20px;
+    margin-left: -580px;
+    margin-right: 540px;
+}
+
+.primary-btn {
     display: inline-block;
-    padding: 12px 20px;
-    background-color: #1f6f8b;
+    margin-bottom: 20px;
+    margin-left: -580px;
+    margin-right: 540px;
+    padding: 14px 28px;
+    background-color: #0f4c75;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-weight: 600;
 }
 
-.btn:hover {
-    background-color: #155d73;
+/* Cards */
+.card-grid {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
 }
 
-.note {
-    font-size: 13px;
-    color: #777;
+.card {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #0f4c75;
+}
+
+.card p {
+    font-size: 14px;
+    color: #5f6f7c;
+}
+
+/* Test page */
+.test-box {
+    max-width: 500px;
+    margin: 100px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 14px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.footer {
+    width: 100%;
+    background-color: #0f4c75;
+    color: white;
+    margin-top: 1100px;
+}
+
+.footer-inner {
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.footer p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #e6f0f7;
+}
+
+.contact-details {
+    margin: 15px 0;
+}
+
+.footer-note {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #c9dde9;
+}
+
+
+input[type="file"] {
     margin-top: 20px;
 }
 
-.link {
-    color: #1f6f8b;
-    text-decoration: none;
+/* Result */
+.result-badge {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    margin: 20px 0;
 }
 
-.result.low {
-    font-size: 28px;
-    color: green;
-    margin: 20px 0;
+.low {
+    background-color: #dff5ea;
+    color: #1b7f5c;
+}
+
+.footer-note {
+    margin-top: 30px;
+    font-size: 13px;
+    color: #7a8a99;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #0f4c75;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.back-link:hover {
+    text-decoration: underline;
 }

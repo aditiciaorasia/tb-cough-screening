@@ -29,3 +29,6 @@ function sendAudio() {
     // 6. Navigate to result page
     window.location.href = "result.html";
 }
+
+
+

@@ -8,34 +8,31 @@
 </head>
 <body>
 
-    <div class="container">
-        <h1>Cough Test</h1>
+    <div class="test-box">
 
-        <p class="subtitle">
-            Please upload a cough audio recording (5–10 seconds) in a quiet environment.
-        </p>
+    <a href="index.html" class="back-link">← Back to Home</a>
 
-        <p class="note">
-            Accepted formats: .wav or .mp3
-        </p>
+    <h1>Cough Screening</h1>
 
-        <input type="file" accept=".wav,.mp3">
+    <p>
+        Upload a cough recording (5–10 seconds) in a quiet environment.
+    </p>
 
-        <br><br>
+    <input type="file" accept=".wav,.mp3">
 
-        <button class="btn" onclick="sendAudio()">
-            Submit for Analysis
-        </button>
+    <br><br>
 
-        <br><br>
+    <button class="primary-btn" onclick="sendAudio()">
+        Analyze Cough
+    </button>
 
-        <a href="index.html" class="link">
-            Back to Home
-        </a>
-    </div>
+    <p class="footer-note">
+        This tool does not replace professional medical diagnosis.
+    </p>
+</div>
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+<script src="script.js"></script>
+
 
 </body>
 </html>
