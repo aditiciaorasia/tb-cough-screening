@@ -47,12 +47,10 @@ body {
 }
 
 .logo img {
-    height: 40px;
-    width: auto;
-    display: block;
-    margin-top: -140px;
-    margin-left: 20px;
+    height: 42px;
+    margin-bottom: 40px;
 }
+
 
 
 .nav a {
@@ -65,40 +63,45 @@ body {
 }
 
 .nav a:hover {
-    transform: scale(5.5);
+    transform: scale(1.1);
     color: #000000;
 }
 
 /* Hero */
 .hero {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 40px;
+    grid-template-columns: 1.4fr 1fr; /* asymmetric */
     align-items: center;
+    gap: 60px;
+    padding: 80px 0;
 }
 
-.hero h1 {
+
+.hero-left {
+    padding-left: 80px;   /* THIS replaces margin-left hacks */
+    text-align: left;
+}
+
+.hero-left h1 {
     font-size: 40px;
-    margin-top: 110px;
     margin-bottom: 20px;
-    margin-left: -580px;
-    margin-right: 500px;
 }
 
-.hero p {
+.hero-left p {
     font-size: 18px;
     line-height: 1.6;
-    color: #4a5c6a;
-    margin-bottom: 20px;
-    margin-left: -580px;
-    margin-right: 540px;
+    margin-bottom: 24px;
 }
+
+.hero-right img {
+    width: 100%;
+    border-radius: 16px;
+    display: block;
+}
+
 
 .primary-btn {
     display: inline-block;
-    margin-bottom: 20px;
-    margin-left: -580px;
-    margin-right: 540px;
     padding: 14px 28px;
     background-color: #0f4c75;
     color: white;
@@ -106,6 +109,7 @@ body {
     border-radius: 8px;
     font-weight: 600;
 }
+
 
 /* Cards */
 .card-grid {
@@ -147,7 +151,7 @@ body {
     width: 100%;
     background-color: #0f4c75;
     color: white;
-    margin-top: 1100px;
+
 }
 
 .footer-inner {
