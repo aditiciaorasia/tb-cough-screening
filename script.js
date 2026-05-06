@@ -1,34 +1,49 @@
-function sendAudio() {
-    // 1. Get file input
-    const fileInput = document.querySelector("input[type='file']");
-    const file = fileInput.files[0];
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
-    // 2. Validation: file selected or not
-    if (!file) {
-        alert("Please upload a cough audio file before proceeding.");
-        return;
-    }
+    document.querySelectorAll(".steps-slider").forEach(slider => {
 
-    // 3. Validation: file type
-    const allowedTypes = ["audio/wav", "audio/mpeg"];
-    if (!allowedTypes.includes(file.type)) {
-        alert("Only .wav or .mp3 audio files are allowed.");
-        return;
-    }
+        const track = slider.querySelector(".steps-track");
+        const steps = slider.querySelectorAll(".step");
+        const prevBtn = slider.querySelector(".arrow.left");
+        const nextBtn = slider.querySelector(".arrow.right");
+        const dots = slider.querySelectorAll(".dot");
 
-    // 4. (Frontend-only) Simulate analysis result
-    // This will be replaced later by backend ML output
-    const simulatedResult = {
-        risk: "Low",
-        message: "Based on the cough sound analysis, the result indicates a lower risk."
-    };
+        if (!track || !prevBtn || !nextBtn || steps.length === 0) {
+            console.warn("Incomplete slider found, skipping");
+            return;
+        }
 
-    // 5. Store result temporarily (browser memory)
-    localStorage.setItem("tb_result", JSON.stringify(simulatedResult));
+        let currentIndex = 0;
 
-    // 6. Navigate to result page
-    window.location.href = "result.html";
-}
+        function updateSlider() {
+            const stepWidth = steps[0].offsetWidth;
+            track.style.transform = `translateX(-${currentIndex * stepWidth}px)`;
 
+            dots.forEach(d => d.classList.remove("active"));
+            if (dots[currentIndex]) dots[currentIndex].classList.add("active");
 
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex === steps.length - 1;
+        }
+
+        prevBtn.addEventListener("click", () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateSlider();
+            }
+        });
+
+        nextBtn.addEventListener("click", () => {
+            if (currentIndex < steps.length - 1) {
+                currentIndex++;
+                updateSlider();
+            }
+        });
+
+        updateSlider();
+    });
+
+});
+</script>
 

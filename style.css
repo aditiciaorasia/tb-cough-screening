@@ -26,44 +26,79 @@ body {
     margin: auto;
     padding: 20px 20px;
     background-color: rgb(241, 241, 241);
+    
 }
 
-
+.bg {
+    width: 380px;
+    height: 380px;
+    background-color: blue;
+    border-radius: 6px;
+}
 /* Header */
-.header {
+.header{
     position: sticky;
-    top: 0;
-    z-index: 10;
-    width: 100%;
-    background-color: #CFAB8D;
-    box-shadow: 0 20px 32px rgba(0, 0, 0, 0.10);
+    top: 20px;
 
+    width: calc(100% - 80px);
+    margin: 0 auto;
+
+    border-radius: 60px;
+
+    background: linear-gradient(
+        90deg,
+        rgba(92,198,198,0.7),
+        rgba(143,209,158,0.7)
+    );
+
+    backdrop-filter: blur(8px);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+
+    z-index: 1000;
 }
+
 
 /* Centered content inside header */
 .header-inner {
     max-width: 1100px;
     margin: auto;
     padding: 20px;
-    
-    display: flex;
-    justify-content: right;
+
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
 }
 
-.logo img {
-    height: 42px;
+
+.logo img{
+    height: 40px;
+    
 }
 
-
+.nav {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    justify-self: center;
+}
 
 .nav a {
-    margin-left: 20px;
     text-decoration: none;
     font-weight: 500;
     color: #ffffff;
     transition: transform 0.2s ease, color 0.2s ease;
 
+}
+
+.sign-up {
+    padding: 10px 18px;
+    border-radius: 50px;
+    border: none;
+    background-color: #0f4c75;
+    color: white;
+    font-weight: 600;
+    font-size: medium;
 }
 
 .nav a:hover {
@@ -80,9 +115,12 @@ body {
     padding: 40px 0;
 }
 
+.typography img {
+    height: 42px;
+}
 
 .hero-left {
-    padding-left: 30px;   /* THIS replaces margin-left hacks */
+    padding-left: 50px;   /* THIS replaces margin-left hacks */
     text-align: left;
 }
 
@@ -97,17 +135,140 @@ body {
     margin-bottom: 24px;
 }
 
-.hero-right {
-    padding-right: 40px;
+.lung-card{ 
+    width:380px; 
+    background:linear-gradient( 30deg, rgba(165,135,109,0.7), rgba(255,255,255,0.7) 
+    ); 
+    border-radius:20px; 
+    padding:0px 20px; 
+    position:relative; 
+    text-align:center; 
+    box-shadow:0 20px 40px rgba(0,0,0,0.1); 
+} 
+
+.badge{ 
+    position:absolute; 
+    top:-16px; 
+    left:50%; 
+    transform:translateX(-50%); 
+    background:white; 
+    padding:6px 16px; 
+    border-radius:20px; 
+    font-size:14px; 
+} 
+
+.lung-title{ 
+    color:#c21818; 
+    font-size:26px; 
+    margin-bottom:20px; 
+} 
+
+.lung-container{ 
+    position:relative; 
+    display:flex; 
+    justify-content:center; 
+} 
+
+.lung{ 
+    width:250px; 
+    transition: transform 0.25s ease;
+} 
+
+.lung:hover {
+    transform: scale(1.02);
 }
 
-.hero-right img {
-    width: 100%;
-    border-radius: 16px;
-    display: block;
+
+/* floating labels */ 
+.tip{ 
+    position:absolute; 
+    background:white; 
+    padding:6px 12px; 
+    border-radius:20px; 
+    font-size:13px; 
+    box-shadow:0 3px 10px rgba(0,0,0,0.1); 
+    transition: transform 0.25s ease, box-shadow 0.25s ease
+} 
+
+.tip:hover {
+    transform: scale(1.03) translateY(-1px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.left1{ 
+    left:-40px; 
+    top:40px; 
+} 
+
+.left2{ 
+    left:-60px; 
+    top:110px; 
+} 
+
+.right1{ 
+    right:-65px; 
+    top:75px; 
+} 
+
+.right2{ 
+    right:-120px; 
+    top:150px; 
+} 
+
+/* CTA */ 
+.lung-cta{ 
+    margin-top: 0px; 
+    background:#e34d4d; 
+    border-radius:40px; 
+    padding:8px; 
+    display:flex; 
+    justify-content:space-between; 
+} 
+
+.btn-light{ 
+    background:white; 
+    border:none; 
+    padding:10px 18px; 
+    border-radius:25px; 
+    font-weight:600; 
+} 
+
+.btn-main{ 
+    background:transparent; 
+    border:none; 
+    color:white; 
+    padding:10px 18px; 
+    font-weight:600; 
+}
+
+.image-box {
+    padding: 60px;
+    width: 380px;
+    height: 380px;
+    background: linear-gradient(
+        30deg,
+        rgba(165, 135, 109, 0.7),
+        rgba(255, 255, 255, 0.7)
+    );
+    border-radius: 16px;     
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
     
+    
+    display: flex;
+    align-items: center;
 }
 
+.image-box img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+
+    transition: transform 0.25s ease;
+}
+
+.image-box img:hover {
+    transform: scale(1.03);
+}
 
 .primary-btn {
     display: inline-block;
@@ -115,9 +276,10 @@ body {
     background-color: #0f4c75;
     color: white;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 50px;
     font-weight: 600;
 }
+
 
 
 /* Cards */
@@ -154,6 +316,83 @@ body {
     border-radius: 14px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.08);
     text-align: center;
+}
+
+/* Full-width background section behind cards */
+.features-section {
+    width: 100%;
+    background-color: #d6e7f9;   /* light contrast */
+    padding: 50px 0;  
+    position:relative; 
+    z-index: 2;          /* top & bottom space */
+}
+
+/* Keep cards centered like before */
+.features-section .card-grid {
+    max-width: 1100px;           /* same width as your page */
+    margin: 0 auto;
+    padding: 0 20px;     
+         /* mobile-safe padding */
+}
+
+.page2 {
+    width: 100%;
+    background-color: rgb(241, 241, 241);   /* light contrast */
+    padding: 200px 0; 
+               /* top & bottom space */
+}
+
+.page2-heading {
+    position: relative;
+}
+
+/* Big red cut circle */
+.red-circle {
+    width: 420px;
+    height: 350px;
+    background: #d63a00;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+    top: -300px;
+    left: -100px;
+}
+
+/* Gray rectangle */
+.about-TB {
+    width: 320px;
+    height: 420px;
+    background: #8a8989;
+    margin-right: 100px;
+    
+    position:absolute;
+}
+
+/* Small gray dot */
+.gray-dot {
+    width: 48px;
+    height: 48px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    position: absolute;
+    top: -24px;
+    left: -24px;
+}
+
+/* RIGHT SIDE */
+.precautions {
+    display: grid;
+    grid-template-columns: repeat(2, 160px);
+    grid-template-rows: repeat(2, 260px);
+    gap: 24px;
+    justify-content: center;
+    align-content: center;
+}
+
+/* Rounded cards */
+.carrd {
+    background: #f8d1b3;
+    border-radius: 24px;
 }
 
 .footer {

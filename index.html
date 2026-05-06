@@ -5,27 +5,35 @@
     <title>TB Cough Screening</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <div class="header">
         <div class="header-inner">
+            <div class="logo">
+                <img src="logo.png" alt="LOGO">
+            </div>
+
             <div class="nav">
                 <a href="#home">Home</a>
                 <a href="test.html">Cough Test</a>
                 <a href="#about">About</a>
                 <a href="#contact">Contact Us</a>
             </div>
+
+            <button class="sign-up">Sign Up</button>
         </div>
            
     </div>
 
-    <div class="page">
+    <div class="page" id="home">
+        
 
-    <section class="hero" id="home">
+    <section class="hero">
     
     <div class="hero-left">
-        <div class="logo">
-            <img src="logo.png" alt="TB screening logo">
+        <div class="typography">
+            <img src="typography.png" alt="TB screening typography">
         </div>
 
         <h1>Early TB Risk Screening Using Cough Sounds</h1>
@@ -35,30 +43,85 @@
             to provide a preliminary assessment of tuberculosis risk.
         </p>
 
-        <a href="test.html" class="primary-btn">Start Screening</a>
+        <div class="primary-btn">
+            <a href="test.html" class="primary-btn">Start Screening</a>
+        </div>
     </div>
 
-    <div class="hero-right">
-        <img src="bg.png" alt="Healthcare">
+    <div class="lung-card"> 
+        <div class="badge">
+            Early Detection Matters
+        </div> 
+        <h2 class="lung-title"> 
+            Keep Your Lungs<br>Breathing Strong
+        </h2> 
+        <div class="lung-container"> 
+            <img src="lungs_png.png" class="lung"> 
+            <span class="tip left1">
+                Eat Smart, Stay Active
+            </span> 
+            <span class="tip left2">
+                Routine Check-Ups
+            </span> 
+            <span class="tip right1">
+                Monitor Your Numbers
+            </span> 
+            <span class="tip right2">
+                Quit Smoking & Limit Alcohol
+            </span> 
+        </div> 
+        <div class="lung-cta"> 
+            <button class="btn-light">
+                Get Free Consultation
+            </button> 
+            <button class="btn-main">
+                Know Your Lung Health
+            </button> 
+        </div> 
     </div>
+
+    
+    </section>
+    
+    
+</div>
+
+<section class="features-section" id="about">
+        <div class="card-grid">
+            <div class="card">
+                <h3>Non-invasive</h3>
+                <p>No physical tests required. Uses cough    audio only.</p>
+            </div>
+
+            <div class="card">
+                <h3>Fast Screening</h3>
+                <p>Results generated within seconds.</p>
+            </div>
+
+            <div class="card">
+                <h3>Assistive Tool</h3>
+                <p>Supports early awareness, not diagnosis.</p>
+            </div>
+        </div>
 
 </section>
 
-    <div class="card-grid" id="about">
-        <div class="card">
-            <h3>Non-invasive</h3>
-            <p>No physical tests required. Uses cough audio only.</p>
-        </div>
-        <div class="card">
-            <h3>Fast Screening</h3>
-            <p>Results generated within seconds.</p>
-        </div>
-        <div class="card">
-            <h3>Assistive Tool</h3>
-            <p>Supports early awareness, not diagnosis.</p>
+<div class="page2" id="about-tb">
+    <div class="page2-heading">
+        <div class="red-circle"></div>
+
+        <div class="about-TB">
+            <div class="gray-dot"></div>
         </div>
     </div>
 
+    <!-- RIGHT SIDE -->
+    <div class="precations">
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+    </div>
 </div>
 
 <footer class="footer" id="contact">
