@@ -8,7 +8,7 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
 
-    <title>Cough Test</title>
+    <title>Multimodal TB Screening</title>
 
     <link rel="stylesheet" href="style.css">
 
@@ -33,82 +33,119 @@
 
         <!-- Heading -->
 
-        <h1>Cough Screening</h1>
+        <h1>Multimodal TB Screening</h1>
 
 
 
         <!-- Description -->
 
-        <p>
+        <p class="screening-description">
 
-            Upload a cough recording
-            (5–10 seconds)
-            in a quiet environment.
+            Upload a cough recording,
+            a chest X-ray,
+            or both for enhanced TB screening.
 
         </p>
 
 
 
-        <!-- Steps -->
+        <!-- Note -->
 
-        <div class="screening-steps">
+        <div class="screening-note">
 
-            <div class="step-item">
-
-                1. Record cough clearly
-
-            </div>
-
-            <div class="step-item">
-
-                2. Upload audio sample
-
-            </div>
-
-            <div class="step-item">
-
-                3. AI analyzes pattern
-
-            </div>
-
-            <div class="step-item">
-
-                4. Screening result generated
-
-            </div>
+            At least one input is required
+            to begin analysis.
 
         </div>
 
 
 
-        <!-- Upload Box -->
 
-        <label for="audioUpload"
-            class="upload-box">
+        <!-- =========================
+             MULTIMODAL INPUTS
+        ========================= -->
 
-            Click to Upload Cough Audio
-
-        </label>
+        <div class="multi-input-container">
 
 
 
-        <!-- Hidden Input -->
+            <!-- COUGH CARD -->
 
-        <input
-            type="file"
-            id="audioUpload"
-            accept=".wav,.mp3">
+            <div class="input-card">
+
+                <h2>Cough Audio</h2>
+
+                <p>
+
+                    Upload a cough recording
+                    (5–10 seconds).
+
+                </p>
+
+
+                <label for="audioUpload"
+                    class="upload-box">
+
+                    Upload Cough Audio
+
+                </label>
+
+
+                <input
+                    type="file"
+                    id="audioUpload"
+                    accept=".wav,.mp3">
+
+
+                <p id="fileName"
+                    class="file-name">
+
+                    No audio selected
+
+                </p>
+
+            </div>
 
 
 
-        <!-- File Name -->
+            <!-- XRAY CARD -->
 
-        <p id="fileName"
-            class="file-name">
+            <div class="input-card">
 
-            No file selected
+                <h2>Chest X-Ray</h2>
 
-        </p>
+                <p>
+
+                    Upload a chest X-ray
+                    image for additional analysis.
+
+                </p>
+
+
+                <label for="xrayUpload"
+                    class="upload-box">
+
+                    Upload Chest X-Ray
+
+                </label>
+
+
+                <input
+                    type="file"
+                    id="xrayUpload"
+                    accept=".jpg,.jpeg,.png">
+
+
+                <p id="xrayFileName"
+                    class="file-name">
+
+                    No X-ray selected
+
+                </p>
+
+            </div>
+
+        </div>
 
 
 
@@ -119,7 +156,7 @@
             id="analyzeBtn"
             onclick="sendAudio()">
 
-            Analyze Cough
+            Start Multimodal Analysis
 
         </button>
 

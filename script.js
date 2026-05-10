@@ -15,20 +15,36 @@ const signupForm =
     document.getElementById("signupForm");
 
 
-// Open modal
+
+/* GLOBAL MODAL FUNCTION */
+
+function openSignupModal() {
+
+    if (signupModal) {
+
+        signupModal.classList.add("active");
+
+    }
+
+}
+
+
+
+/* NAVBAR SIGNUP BUTTON */
 
 if (openSignup) {
 
     openSignup.addEventListener("click", () => {
 
-        signupModal.classList.add("active");
+        openSignupModal();
 
     });
 
 }
 
 
-// Close modal
+
+/* CLOSE MODAL */
 
 if (closeSignup) {
 
@@ -41,7 +57,8 @@ if (closeSignup) {
 }
 
 
-// Close on outside click
+
+/* CLOSE ON OUTSIDE CLICK */
 
 if (signupModal) {
 
@@ -58,7 +75,8 @@ if (signupModal) {
 }
 
 
-// Form submit
+
+/* FORM SUBMIT */
 
 if (signupForm) {
 
@@ -98,8 +116,12 @@ if (signupForm) {
 
         // Change navbar text
 
-        openSignup.innerText =
-            "Welcome, " + patientData.name;
+        if (openSignup) {
+
+            openSignup.innerText =
+                "Welcome, " + patientData.name;
+
+        }
 
 
         // Close modal
@@ -117,35 +139,52 @@ if (signupForm) {
 
 
 
+
+
 /* =========================
    FILE INPUT + ANALYSIS
 ========================= */
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    // File input
+    // AUDIO INPUT
 
     const fileInput =
         document.getElementById("audioUpload");
 
-    // File name display
+
+    // AUDIO FILE NAME
 
     const fileName =
         document.getElementById("fileName");
 
-    // Analyze button
+
+    // XRAY INPUT
+
+    const xrayInput =
+        document.getElementById("xrayUpload");
+
+
+    // XRAY FILE NAME
+
+    const xrayFileName =
+        document.getElementById("xrayFileName");
+
+
+    // ANALYZE BUTTON
 
     const analyzeBtn =
         document.getElementById("analyzeBtn");
 
-    // Loader
+
+    // LOADER
 
     const loader =
         document.getElementById("loader");
 
 
 
-    // File selection
+    /* AUDIO FILE */
 
     if (fileInput && fileName) {
 
@@ -160,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
 
                 fileName.innerText =
-                    "No file selected";
+                    "No audio selected";
 
             }
 
@@ -170,17 +209,51 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    // Global analyze function
+    /* XRAY FILE */
+
+    if (xrayInput && xrayFileName) {
+
+        xrayInput.addEventListener("change", () => {
+
+            if (xrayInput.files.length > 0) {
+
+                xrayFileName.innerText =
+                    "Selected: " +
+                    xrayInput.files[0].name;
+
+            } else {
+
+                xrayFileName.innerText =
+                    "No X-ray selected";
+
+            }
+
+        });
+
+    }
+
+
+
+    /* GLOBAL ANALYSIS FUNCTION */
 
     window.sendAudio = function () {
 
-        // Check upload
+        const audioUploaded =
+            fileInput &&
+            fileInput.files.length > 0;
 
-        if (!fileInput ||
-            fileInput.files.length === 0) {
+        const xrayUploaded =
+            xrayInput &&
+            xrayInput.files.length > 0;
+
+
+
+        // REQUIRE AT LEAST ONE INPUT
+
+        if (!audioUploaded && !xrayUploaded) {
 
             alert(
-                "Please upload a cough audio file first."
+                "Please upload cough audio, chest X-ray, or both."
             );
 
             return;
@@ -188,7 +261,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-        // Loading state
+        // BUTTON STATE
 
         if (analyzeBtn) {
 
@@ -196,8 +269,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Analyzing...";
 
             analyzeBtn.disabled = true;
+
         }
 
+
+        // LOADER
 
         if (loader) {
 
@@ -207,7 +283,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-        // Fake processing delay
+        // FAKE PROCESSING
 
         setTimeout(() => {
 
@@ -227,7 +303,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-            // LOW
+            /* LOW */
 
             if (randomRisk === "Low") {
 
@@ -238,14 +314,15 @@ document.addEventListener("DOMContentLoaded", function () {
                     confidence: "82%",
 
                     message:
-                        "The cough pattern indicates a lower likelihood of TB-related symptoms."
+                        "The uploaded inputs indicate a lower likelihood of TB-related abnormalities."
 
                 };
 
             }
 
 
-            // MEDIUM
+
+            /* MEDIUM */
 
             else if (randomRisk === "Medium") {
 
@@ -256,14 +333,15 @@ document.addEventListener("DOMContentLoaded", function () {
                     confidence: "76%",
 
                     message:
-                        "The cough pattern shows moderate indicators associated with respiratory irregularities."
+                        "The uploaded inputs show moderate indicators associated with respiratory irregularities."
 
                 };
 
             }
 
 
-            // HIGH
+
+            /* HIGH */
 
             else {
 
@@ -274,7 +352,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     confidence: "91%",
 
                     message:
-                        "The cough pattern contains characteristics commonly associated with high TB risk."
+                        "The uploaded inputs contain characteristics commonly associated with high TB risk."
 
                 };
 
@@ -282,7 +360,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-            // Save result
+            /* INPUT SOURCES */
+
+            result.inputsUsed = [];
+
+
+            if (audioUploaded) {
+
+                result.inputsUsed.push(
+                    "Cough Audio"
+                );
+
+            }
+
+
+            if (xrayUploaded) {
+
+                result.inputsUsed.push(
+                    "Chest X-Ray"
+                );
+
+            }
+
+
+
+            // SAVE RESULT
 
             localStorage.setItem(
                 "tb_result",
@@ -291,7 +393,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-            // Redirect
+            // REDIRECT
 
             window.location.href =
                 "result.html";

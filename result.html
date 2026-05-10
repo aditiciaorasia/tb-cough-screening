@@ -63,6 +63,21 @@
 
 
 
+        <!-- INPUTS USED -->
+
+        <div class="inputs-used">
+
+            <h3>Inputs Used</h3>
+
+            <div class="input-tags"
+                id="inputTags">
+
+            </div>
+
+        </div>
+
+
+
         <!-- Result Message -->
 
         <p id="message">
@@ -139,7 +154,8 @@
 
         if (!data) {
 
-            window.location.href = "test.html";
+            window.location.href =
+                "test.html";
 
         }
 
@@ -158,15 +174,24 @@
             const confidence =
                 document.getElementById("confidence");
 
+            const inputTags =
+                document.getElementById("inputTags");
 
+
+
+            // Risk badge
 
             badge.innerText =
                 data.risk + " Risk";
 
 
+            // Message
+
             message.innerText =
                 data.message;
 
+
+            // Confidence
 
             confidence.innerText =
                 data.confidence;
@@ -189,6 +214,28 @@
                 data.risk.toLowerCase();
 
             badge.classList.add(riskLevel);
+
+
+
+            /* INPUT TAGS */
+
+            if (data.inputsUsed) {
+
+                data.inputsUsed.forEach(input => {
+
+                    const tag =
+                        document.createElement("div");
+
+                    tag.classList.add("input-tag");
+
+                    tag.innerText =
+                        "✓ " + input;
+
+                    inputTags.appendChild(tag);
+
+                });
+
+            }
 
         }
 
