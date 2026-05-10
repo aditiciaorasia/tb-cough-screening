@@ -1667,60 +1667,73 @@ gap: 40px;
 
 
 /* =========================
-   RESPONSIVE SCALING
+   HERO RESPONSIVE
 ========================= */
-
-html {
-
-    font-size: 16px;
-}
-
-
-@media screen and (max-width: 1400px) {
-
-    html {
-
-        font-size: 15px;
-    }
-
-}
-
-
-@media screen and (max-width: 1200px) {
-
-    html {
-
-        font-size: 14px;
-    }
-
-}
-
-
-@media screen and (max-width: 992px) {
-
-    html {
-
-        font-size: 13px;
-    }
-
-}
-
 
 @media screen and (max-width: 768px) {
 
-    html {
+    .hero {
 
-        font-size: 11px;
+        flex-direction: column;
+
+        gap: 50px;
+
+        padding: 40px 25px;
     }
 
-}
+
+    .hero-left {
+
+        width: 100%;
+
+        text-align: center;
+
+        align-items: center;
+    }
 
 
-@media screen and (max-width: 576px) {
+    .hero-left h1 {
 
-    html {
+        font-size: 2.5rem;
 
-        font-size: 9px;
+        line-height: 1.2;
+    }
+
+
+    .hero-left p {
+
+        font-size: 1rem;
+
+        max-width: 100%;
+    }
+
+
+    .lung-card {
+
+        width: 100%;
+
+        max-width: 100%;
+    }
+
+
+    .lung-container {
+
+        transform: scale(0.9);
+    }
+
+
+    .lung-cta {
+
+        flex-direction: column;
+
+        gap: 14px;
+    }
+
+
+    .btn-light,
+    .btn-main {
+
+        width: 100%;
     }
 
 }
