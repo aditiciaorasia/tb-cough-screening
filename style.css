@@ -450,7 +450,11 @@ body {
 
     width: 100%;
 
-    background-color: #d6e7f9;
+    background: linear-gradient(
+        90deg,
+        rgba(236, 240, 239, 0.7),
+        rgba(194, 203, 196, 0.7)
+    );
 
     padding: 60px 0;
 }
@@ -481,8 +485,26 @@ body {
     border-radius: 16px;
 
     box-shadow: var(--shadow);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+
+    position: relative;
+
+    overflow: hidden;
 }
 
+
+.card:hover {
+
+    transform:
+        translateY(-3px)
+        scale(1);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,0.12);
+}
 
 .card h3 {
 
@@ -1057,8 +1079,8 @@ input[type="file"] {
 
     background-image:
         linear-gradient(
-            rgba(255,255,255,0.88),
-            rgba(255,255,255,0.88)
+            rgba(255,255,255,0.82),
+            rgba(255,255,255,0.82)
         ),
         url("tb-bg.jpg");
 
@@ -1067,8 +1089,9 @@ input[type="file"] {
     background-position: center;
 
     position: relative;
-}
 
+    overflow: hidden;
+}
 
 
 /* MAIN CONTAINER */
@@ -1086,17 +1109,45 @@ input[type="file"] {
     align-items: center;
 
     gap: 70px;
+
+    position: relative;
+
+    z-index: 2;
 }
-
-
 
 /* LEFT SIDE */
 
+/* LEFT WHITE PANEL */
+
 .about-tb-left {
 
-    padding-right: 20px;
+    position: relative;
+
+    padding: 40px 60px 40px 0;
+
+    z-index: 2;
 }
 
+/* LARGE WHITE LEFT PANEL */
+
+.about-tb-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 42%;
+
+    height: 100%;
+
+    background: white;
+
+    z-index: 1;
+}
 
 .about-tb-left h2 {
 
