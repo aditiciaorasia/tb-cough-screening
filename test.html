@@ -1,39 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
     <title>Cough Test</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
+
+
 
     <div class="test-box">
 
-    <a href="index.html" class="back-link">← Back to Home</a>
+        <!-- Back -->
 
-    <h1>Cough Screening</h1>
+        <a href="index.html"
+            class="back-link">
 
-    <p>
-        Upload a cough recording (5–10 seconds) in a quiet environment.
-    </p>
+            ← Back to Home
 
-    <input type="file" accept=".wav,.mp3">
+        </a>
 
-    <br><br>
 
-    <button class="primary-btn" onclick="sendAudio()">
-        Analyze Cough
-    </button>
 
-    <p class="footer-note">
-        This tool does not replace professional medical diagnosis.
-    </p>
-</div>
+        <!-- Heading -->
 
-<script src="script.js"></script>
+        <h1>Cough Screening</h1>
 
+
+
+        <!-- Description -->
+
+        <p>
+
+            Upload a cough recording
+            (5–10 seconds)
+            in a quiet environment.
+
+        </p>
+
+
+
+        <!-- Steps -->
+
+        <div class="screening-steps">
+
+            <div class="step-item">
+
+                1. Record cough clearly
+
+            </div>
+
+            <div class="step-item">
+
+                2. Upload audio sample
+
+            </div>
+
+            <div class="step-item">
+
+                3. AI analyzes pattern
+
+            </div>
+
+            <div class="step-item">
+
+                4. Screening result generated
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Upload Box -->
+
+        <label for="audioUpload"
+            class="upload-box">
+
+            Click to Upload Cough Audio
+
+        </label>
+
+
+
+        <!-- Hidden Input -->
+
+        <input
+            type="file"
+            id="audioUpload"
+            accept=".wav,.mp3">
+
+
+
+        <!-- File Name -->
+
+        <p id="fileName"
+            class="file-name">
+
+            No file selected
+
+        </p>
+
+
+
+        <!-- Analyze Button -->
+
+        <button
+            class="primary-btn"
+            id="analyzeBtn"
+            onclick="sendAudio()">
+
+            Analyze Cough
+
+        </button>
+
+
+
+        <!-- Footer -->
+
+        <p class="footer-note">
+
+            This tool does not replace
+            professional medical diagnosis.
+
+        </p>
+
+    </div>
+
+
+
+    <script src="script.js"></script>
 
 </body>
-</html>
 
+</html>

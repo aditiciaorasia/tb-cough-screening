@@ -1,41 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
     <title>Screening Result</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
+
+
 
     <div class="test-box">
 
-    <a href="test.html" class="back-link">← Back to Test</a>
+        <!-- Back Button -->
 
-    <h1>Screening Result</h1>
+        <a href="test.html"
+            class="back-link">
 
-    <div id="riskBadge" class="result-badge low">
-        Low Risk
+            ← Back to Test
+
+        </a>
+
+
+
+        <!-- Heading -->
+
+        <h1>Screening Result</h1>
+
+
+
+        <!-- Risk Badge -->
+
+        <div id="riskBadge"
+            class="result-badge low">
+
+            Low Risk
+
+        </div>
+
+
+
+        <!-- Confidence Score -->
+
+        <div class="confidence-box">
+
+            Confidence Score:
+            <span id="confidence">
+
+                82%
+
+            </span>
+
+        </div>
+
+
+
+        <!-- Result Message -->
+
+        <p id="message">
+
+            Based on the cough analysis,
+            the result indicates a lower risk.
+
+        </p>
+
+
+
+        <!-- Recommendation Card -->
+
+        <div class="recommendation-card">
+
+            <h3>Recommended Action</h3>
+
+            <ul>
+
+                <li>
+                    Maintain healthy lifestyle habits
+                </li>
+
+                <li>
+                    Monitor symptoms if persistent
+                </li>
+
+                <li>
+                    Consult a healthcare professional
+                    if cough continues
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- Footer Note -->
+
+        <p class="footer-note">
+
+            Please consult a healthcare professional
+            for confirmation.
+
+        </p>
+
+
+
+        <!-- Test Again -->
+
+        <a href="test.html"
+            class="primary-btn">
+
+            Test Again
+
+        </a>
+
     </div>
 
-    <p id="message">
-        Based on the cough analysis, the result indicates a lower risk.
-    </p>
 
-    <p class="footer-note">
-        Please consult a healthcare professional for confirmation.
-    </p>
 
-    <a href="test.html" class="primary-btn">Test Again</a>
-</div>
 
-<script>
-    const data = JSON.parse(localStorage.getItem("tb_result"));
-    if (data) {
-        document.getElementById("riskBadge").innerText = data.risk + " Risk";
-        document.getElementById("message").innerText = data.message;
-    }
-</script>
+
+    <script>
+
+        const data =
+            JSON.parse(
+                localStorage.getItem("tb_result")
+            );
+
+
+        // Redirect if no result exists
+
+        if (!data) {
+
+            window.location.href = "test.html";
+
+        }
+
+
+
+        // Update result dynamically
+
+        if (data) {
+
+            const badge =
+                document.getElementById("riskBadge");
+
+            const message =
+                document.getElementById("message");
+
+            const confidence =
+                document.getElementById("confidence");
+
+
+
+            badge.innerText =
+                data.risk + " Risk";
+
+
+            message.innerText =
+                data.message;
+
+
+            confidence.innerText =
+                data.confidence;
+
+
+
+            // Remove old classes
+
+            badge.classList.remove(
+                "low",
+                "medium",
+                "high"
+            );
+
+
+
+            // Add correct class
+
+            const riskLevel =
+                data.risk.toLowerCase();
+
+            badge.classList.add(riskLevel);
+
+        }
+
+    </script>
 
 </body>
+
 </html>

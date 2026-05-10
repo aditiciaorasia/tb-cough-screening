@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TB Cough Screening</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <!-- =========================
+         HEADER
+    ========================= -->
+
     <div class="header">
+
         <div class="header-inner">
+
             <div class="logo">
                 <img src="logo.png" alt="LOGO">
             </div>
@@ -21,129 +30,391 @@
                 <a href="#contact">Contact Us</a>
             </div>
 
-            <button class="sign-up">Sign Up</button>
+            <button class="sign-up" id="openSignup">
+                Sign Up
+            </button>
+
         </div>
-           
+
     </div>
+
+
+
+    <!-- =========================
+         HERO SECTION
+    ========================= -->
 
     <div class="page" id="home">
-        
 
-    <section class="hero">
-    
-    <div class="hero-left">
-        <div class="typography">
-            <img src="typography.png" alt="TB screening typography">
-        </div>
+        <section class="hero">
 
-        <h1>Early TB Risk Screening Using Cough Sounds</h1>
+            <!-- LEFT SIDE -->
 
-        <p>
-            This web-based screening tool analyzes cough sound patterns
-            to provide a preliminary assessment of tuberculosis risk.
-        </p>
+            <div class="hero-left">
 
-        <div class="primary-btn">
-            <a href="test.html" class="primary-btn">Start Screening</a>
-        </div>
+                <div class="typography">
+                    <img src="typography.png"
+                        alt="TB screening typography">
+                </div>
+
+                <h1>
+                    Early TB Risk Screening
+                    Using Cough Sounds
+                </h1>
+
+                <p>
+                    This web-based screening tool analyzes
+                    cough sound patterns to provide a
+                    preliminary assessment of
+                    tuberculosis risk.
+                </p>
+
+                <div class="primary-btn-container">
+
+                    <a href="test.html"
+                        class="primary-btn">
+
+                        Start Screening
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RIGHT SIDE -->
+
+            <div class="lung-card">
+
+                <div class="badge">
+                    Early Detection Matters
+                </div>
+
+                <h2 class="lung-title">
+
+                    Keep Your Lungs
+                    <br>
+                    Breathing Strong
+
+                </h2>
+
+                <div class="lung-container">
+
+                    <img src="lungs_png.png"
+                        class="lung">
+
+                    <span class="tip left1">
+                        Eat Smart, Stay Active
+                    </span>
+
+                    <span class="tip left2">
+                        Routine Check-Ups
+                    </span>
+
+                    <span class="tip right1">
+                        Monitor Your Numbers
+                    </span>
+
+                    <span class="tip right2">
+                        Quit Smoking & Limit Alcohol
+                    </span>
+
+                </div>
+
+
+                <div class="lung-cta">
+
+                    <button class="btn-light">
+                        Get Free Consultation
+                    </button>
+
+                    <button class="btn-main">
+                        Know Your Lung Health
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
     </div>
 
-    <div class="lung-card"> 
-        <div class="badge">
-            Early Detection Matters
-        </div> 
-        <h2 class="lung-title"> 
-            Keep Your Lungs<br>Breathing Strong
-        </h2> 
-        <div class="lung-container"> 
-            <img src="lungs_png.png" class="lung"> 
-            <span class="tip left1">
-                Eat Smart, Stay Active
-            </span> 
-            <span class="tip left2">
-                Routine Check-Ups
-            </span> 
-            <span class="tip right1">
-                Monitor Your Numbers
-            </span> 
-            <span class="tip right2">
-                Quit Smoking & Limit Alcohol
-            </span> 
-        </div> 
-        <div class="lung-cta"> 
-            <button class="btn-light">
-                Get Free Consultation
-            </button> 
-            <button class="btn-main">
-                Know Your Lung Health
-            </button> 
-        </div> 
-    </div>
 
-    
-    </section>
-    
-    
-</div>
 
-<section class="features-section" id="about">
+    <!-- =========================
+         FEATURES SECTION
+    ========================= -->
+
+    <section class="features-section" id="about">
+
         <div class="card-grid">
+
             <div class="card">
+
                 <h3>Non-invasive</h3>
-                <p>No physical tests required. Uses cough    audio only.</p>
+
+                <p>
+                    No physical tests required.
+                    Uses cough audio only.
+                </p>
+
             </div>
 
+
             <div class="card">
+
                 <h3>Fast Screening</h3>
-                <p>Results generated within seconds.</p>
+
+                <p>
+                    Results generated within seconds.
+                </p>
+
             </div>
 
+
             <div class="card">
+
                 <h3>Assistive Tool</h3>
-                <p>Supports early awareness, not diagnosis.</p>
+
+                <p>
+                    Supports early awareness,
+                    not diagnosis.
+                </p>
+
             </div>
+
         </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         HOW IT WORKS
+    ========================= -->
+
+
+<!-- =========================
+     ABOUT TB SECTION
+========================= -->
+
+<section class="about-tb-section">
+
+    <div class="about-tb-container">
+
+
+        <!-- LEFT -->
+
+        <div class="about-tb-left">
+
+            <h2>About TB</h2>
+
+            <p>
+
+                Tuberculosis (TB) is an infectious
+                disease that mainly affects the lungs.
+                It spreads through the air when an
+                infected person coughs or sneezes.
+
+            </p>
+
+            <p>
+
+                Early screening and timely medical
+                attention can significantly reduce
+                complications and transmission.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- CENTER -->
+
+        <div class="about-tb-image">
+
+            <img src="tb-awareness.png"
+                alt="TB Awareness">
+
+        </div>
+
+
+
+        <!-- RIGHT -->
+
+        <div class="about-tb-right">
+
+            <h3>General Precautions</h3>
+
+            <ul>
+
+                <li>
+                    Cover mouth while coughing
+                </li>
+
+                <li>
+                    Maintain proper ventilation
+                </li>
+
+                <li>
+                    Avoid smoking and alcohol
+                </li>
+
+                <li>
+                    Eat nutritious food regularly
+                </li>
+
+                <li>
+                    Consult a doctor if cough
+                    persists for more than 2 weeks
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
 
 </section>
 
-<div class="page2" id="about-tb">
-    <div class="page2-heading">
-        <div class="red-circle"></div>
+    <!-- =========================
+         SIGNUP MODAL
+    ========================= -->
 
-        <div class="about-TB">
-            <div class="gray-dot"></div>
+    <div class="signup-modal" id="signupModal">
+
+        <div class="signup-box">
+
+            <button class="close-btn"
+                id="closeSignup">
+
+                ×
+
+            </button>
+
+
+            <h2>Patient Registration</h2>
+
+
+            <form id="signupForm">
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Full Name"
+                    required>
+
+
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Phone Number"
+                    required>
+
+
+                <input
+                    type="number"
+                    id="age"
+                    placeholder="Age"
+                    required>
+
+
+                <select id="gender" required>
+
+                    <option value="">
+                        Select Gender
+                    </option>
+
+                    <option value="Male">
+                        Male
+                    </option>
+
+                    <option value="Female">
+                        Female
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+
+                <input
+                    type="number"
+                    id="height"
+                    placeholder="Height (cm)"
+                    required>
+
+
+                <input
+                    type="number"
+                    id="weight"
+                    placeholder="Weight (kg)"
+                    required>
+
+
+                <button
+                    type="submit"
+                    class="signup-submit">
+
+                    Register
+
+                </button>
+
+            </form>
+
         </div>
+
     </div>
 
-    <!-- RIGHT SIDE -->
-    <div class="precations">
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-    </div>
-</div>
 
-<footer class="footer" id="contact">
-    <div class="footer-inner">
-        <h3>Contact Us</h3>
 
-        <p>
-            For queries or feedback related to this screening tool,
-            please reach out to us.
-        </p>
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
-        <p class="contact-details">
-            📧 Email: healthguard.support@gmail.com <br>
-            📍 Location: India
-        </p>
+    <footer class="footer" id="contact">
 
-        <p class="footer-note">
-            This is a preliminary screening tool and not a diagnostic service.
-        </p>
-    </div>
-</footer>
+        <div class="footer-inner">
 
+            <h3>Contact Us</h3>
+
+            <p>
+                For queries or feedback related to this
+                screening tool, please reach out to us.
+            </p>
+
+            <p class="contact-details">
+
+                📧 Email:
+                healthguard.support@gmail.com
+
+                <br>
+
+                📍 Location: India
+
+            </p>
+
+            <p class="footer-note">
+
+                This is a preliminary screening tool
+                and not a diagnostic service.
+
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>
