@@ -1667,14 +1667,20 @@ gap: 40px;
 
 
 /* =========================
-   RESPONSIVE SCALING ONLY
+   RESPONSIVE SCALING
 ========================= */
+
+html {
+
+    font-size: 16px;
+}
+
 
 @media screen and (max-width: 1400px) {
 
     html {
 
-        zoom: 90%;
+        font-size: 15px;
     }
 
 }
@@ -1684,7 +1690,7 @@ gap: 40px;
 
     html {
 
-        zoom: 80%;
+        font-size: 14px;
     }
 
 }
@@ -1694,7 +1700,7 @@ gap: 40px;
 
     html {
 
-        zoom: 70%;
+        font-size: 13px;
     }
 
 }
@@ -1704,7 +1710,7 @@ gap: 40px;
 
     html {
 
-        zoom: 60%;
+        font-size: 11px;
     }
 
 }
@@ -1714,7 +1720,7 @@ gap: 40px;
 
     html {
 
-        zoom: 50%;
+        font-size: 9px;
     }
 
 }
