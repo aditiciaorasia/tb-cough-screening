@@ -1667,78 +1667,6 @@ gap: 40px;
 
 
 /* =========================
-   HERO RESPONSIVE
-========================= */
-
-@media screen and (max-width: 768px) {
-
-    .hero {
-
-        flex-direction: column;
-
-        gap: 50px;
-
-        padding: 40px 25px;
-    }
-
-
-    .hero-left {
-
-        width: 100%;
-
-        text-align: center;
-
-        align-items: center;
-    }
-
-
-    .hero-left h1 {
-
-        font-size: 2.5rem;
-
-        line-height: 1.2;
-    }
-
-
-    .hero-left p {
-
-        font-size: 1rem;
-
-        max-width: 100%;
-    }
-
-
-    .lung-card {
-
-        width: 100%;
-
-        max-width: 100%;
-    }
-
-
-    .lung-container {
-
-        transform: scale(0.9);
-    }
-
-
-    .lung-cta {
-
-        flex-direction: column;
-
-        gap: 14px;
-    }
-
-
-    .btn-light,
-    .btn-main {
-
-        width: 100%;
-    }
-
-}
-
-/* =========================
    HEADER RESPONSIVE
 ========================= */
 
@@ -1746,45 +1674,100 @@ gap: 40px;
 
     .header {
 
-        padding: 15px 20px;
+        padding: 12px 18px;
     }
 
 
     .header-inner {
 
-        flex-direction: column;
+        display: flex;
 
-        gap: 20px;
+        flex-direction: row;
+
+        justify-content: space-between;
+
+        align-items: center;
+
+        gap: 14px;
     }
 
 
     .logo img {
 
-        width: 140px;
+        width: 90px;
     }
 
 
     .nav {
 
-        flex-wrap: wrap;
+        display: flex;
 
-        justify-content: center;
+        flex-direction: row;
 
-        gap: 18px;
+        gap: 12px;
     }
 
 
     .nav a {
 
-        font-size: 0.95rem;
+        font-size: 0.72rem;
     }
 
 
     .sign-up {
 
-        width: 100%;
+        padding: 8px 14px;
 
-        max-width: 220px;
+        font-size: 0.72rem;
+
+        white-space: nowrap;
+    }
+
+}
+
+
+
+
+
+/* =========================
+   HERO RESPONSIVE
+========================= */
+
+@media screen and (max-width: 768px) {
+
+    .hero {
+
+        gap: 30px;
+
+        padding: 40px 25px;
+    }
+
+
+    .hero-left h1 {
+
+        font-size: 2.3rem;
+
+        line-height: 1.2;
+    }
+
+
+    .hero-left p {
+
+        font-size: 0.95rem;
+    }
+
+
+    .typography img {
+
+        width: 180px;
+    }
+
+
+    .lung-card {
+
+        transform: scale(0.82);
+
+        transform-origin: top center;
     }
 
 }
