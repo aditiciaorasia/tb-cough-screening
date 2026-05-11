@@ -1667,138 +1667,112 @@ gap: 40px;
 
 
 /* =========================
-   SMALL PHONE RESPONSIVE
-   320px WIDTH
+   MOBILE NAV
 ========================= */
 
-@media screen and (max-width: 320px) {
+.menu-toggle {
 
-    /* HEADER */
+    display: none;
 
-    .header {
+    background: none;
 
-        padding: 10px 12px;
+    border: none;
+
+    font-size: 28px;
+
+    color: #0f4c75;
+
+    cursor: pointer;
+}
+
+
+.mobile-menu {
+
+    display: none;
+}
+
+
+
+/* MOBILE */
+
+@media screen and (max-width: 768px) {
+
+    .desktop-nav,
+    .desktop-signup {
+
+        display: none;
     }
 
 
-    .header-inner {
+    .menu-toggle {
 
-        gap: 8px;
+        display: block;
     }
 
 
-    .logo img {
+    .mobile-menu {
 
-        width: 60px;
-    }
+        position: absolute;
 
+        top: 80px;
 
-    .nav {
+        right: 20px;
 
-        gap: 6px;
-    }
+        width: 220px;
 
+        background:
+            rgba(255,255,255,0.22);
 
-    .nav a {
+        backdrop-filter: blur(20px);
 
-        font-size: 0.55rem;
-    }
+        -webkit-backdrop-filter: blur(20px);
 
-
-    .sign-up {
-
-        padding: 6px 10px;
-
-        font-size: 0.55rem;
-    }
-
-
-
-    /* HERO */
-
-    .hero {
-
-        flex-direction: column;
-
-        padding: 20px 14px;
-
-        gap: 30px;
-    }
-
-
-    .hero-left h1 {
-
-        font-size: 1.8rem;
-
-        line-height: 1.2;
-
-        text-align: center;
-    }
-
-
-    .hero-left p {
-
-        font-size: 0.8rem;
-
-        text-align: center;
-    }
-
-
-    .typography img {
-
-        width: 120px;
-    }
-
-
-    .primary-btn {
-
-        font-size: 0.8rem;
-
-        padding: 10px 18px;
-    }
-
-
-
-    /* LUNG CARD */
-
-    .lung-card {
-
-        width: 100%;
+        border-radius: 24px;
 
         padding: 20px;
 
-        transform: scale(0.9);
-
-        transform-origin: top center;
-    }
-
-
-    .lung-title {
-
-        font-size: 1.4rem;
-    }
-
-
-    .tip {
-
-        font-size: 0.55rem;
-    }
-
-
-    .lung-cta {
+        display: none;
 
         flex-direction: column;
 
-        gap: 10px;
+        gap: 18px;
+
+        box-shadow:
+            0 10px 30px rgba(0,0,0,0.08);
+
+        z-index: 1000;
     }
 
 
-    .btn-light,
-    .btn-main {
+    .mobile-menu.active {
 
-        width: 100%;
+        display: flex;
+    }
 
-        font-size: 0.75rem;
+
+    .mobile-menu a {
+
+        text-decoration: none;
+
+        color: #0f4c75;
+
+        font-weight: 600;
+    }
+
+
+    .mobile-signup {
+
+        padding: 10px 18px;
+
+        border: none;
+
+        border-radius: 30px;
+
+        background: #0f4c75;
+
+        color: white;
+
+        cursor: pointer;
     }
 
 }

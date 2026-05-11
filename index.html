@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
 <meta name="viewport"
     content="width=device-width, initial-scale=1.0">
-    
+
     <title>TB Cough Screening</title>
 
     <link rel="stylesheet" href="style.css">
@@ -25,16 +25,60 @@
                 <img src="logo.png" alt="LOGO">
             </div>
 
-            <div class="nav">
-                <a href="#home">Home</a>
-                <a href="test.html">Cough Test</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact Us</a>
-            </div>
+<!-- DESKTOP NAV -->
 
-            <button class="sign-up" id="openSignup">
-                Sign Up
-            </button>
+<div class="nav desktop-nav">
+
+    <a href="#home">Home</a>
+    <a href="test.html">Cough Test</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact Us</a>
+
+</div>
+
+
+<button class="sign-up desktop-signup"
+    id="openSignup">
+
+    Sign Up
+
+</button>
+
+
+
+<!-- MOBILE MENU BUTTON -->
+
+<button class="menu-toggle"
+    id="menuToggle">
+
+    ☰
+
+</button>
+
+
+
+<!-- MOBILE DROPDOWN -->
+
+<div class="mobile-menu"
+    id="mobileMenu">
+
+    <a href="#home">Home</a>
+
+    <a href="test.html">Cough Test</a>
+
+    <a href="#about">About</a>
+
+    <a href="#contact">Contact Us</a>
+
+    <button
+        class="mobile-signup"
+        onclick="openSignupModal()">
+
+        Sign Up
+
+    </button>
+
+</div>
 
         </div>
 
