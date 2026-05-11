@@ -165,6 +165,13 @@ body {
 
 }
 
+/* NAV HOVER */
+
+.nav a:hover {
+
+    color: black;
+}
+
 
 
 /* =========================
